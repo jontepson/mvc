@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Mos\Functions;
+namespace jope\Functions;
 
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
@@ -179,7 +179,6 @@ function getCurrentUrl(): string
     $url  = htmlspecialchars($scheme) . "://";
     $url .= htmlspecialchars($server)
         . $port . htmlspecialchars(rawurldecode($uri));
-
     return $url;
 }
 

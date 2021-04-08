@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace jope\Dice;
 
-use function Mos\Functions\{
+use function jope\Functions\{
     destroySession,
     redirectTo,
     renderView,

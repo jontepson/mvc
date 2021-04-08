@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-use function Mos\Functions\url;
+use function jope\Functions\url;
 
 ?><!doctype html>
 <html>
@@ -28,6 +28,7 @@ use function Mos\Functions\url;
         <a href="<?= url("/some/where") ?>">some/where</a> |
         <a href="<?= url("/no/such/path") ?>">Show 404 example</a>
         <a href="<?= url("/dice") ?>">Game 21</a>
+        <a href="<?= url("/ddada") ?>">fail1</a>
     </nav>
 </header>
 <main>

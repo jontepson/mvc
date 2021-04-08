@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Mos\Router;
+namespace jope\Router;
 
-use function Mos\Functions\{
+use function jope\Functions\{
     destroySession,
     redirectTo,
     renderView,

@@ -6,8 +6,8 @@
 
 declare(strict_types=1);
 
-use Mos\Router\Router;
-use function Mos\Functions\getRoutePath;
+use jope\Router\Router;
+use function jope\Functions\getRoutePath;
 
 /**
  * Bootstrapping

@@ -6,7 +6,7 @@
 
 declare(strict_types=1);
 
-use function Mos\Functions\url;
+use function jope\Functions\url;
 
 $url = url("/session/destroy");
 
