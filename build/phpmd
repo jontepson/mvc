@@ -1,0 +1,7 @@
+C:\Users\cecco\dbwebb-kurser\mvc\me\game\src\Dice\Game.php:25	The method playGame() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+C:\Users\cecco\dbwebb-kurser\mvc\me\game\src\Dice\Game.php:47	Avoid using undefined variables such as '$result' which will lead to PHP notices.
+C:\Users\cecco\dbwebb-kurser\mvc\me\game\src\Dice\Game.php:48	Avoid using undefined variables such as '$result' which will lead to PHP notices.
+C:\Users\cecco\dbwebb-kurser\mvc\me\game\src\Dice\Game.php:49	Avoid using undefined variables such as '$result' which will lead to PHP notices.
+C:\Users\cecco\dbwebb-kurser\mvc\me\game\src\Router\Router.php:21	The method dispatch() has a Cyclomatic Complexity of 17. The configured cyclomatic complexity threshold is 10.
+C:\Users\cecco\dbwebb-kurser\mvc\me\game\src\Router\Router.php:62	Missing class import via use statement (line '62', column '29').
+C:\Users\cecco\dbwebb-kurser\mvc\me\game\src\Router\Router.php:66	Missing class import via use statement (line '66', column '29').
