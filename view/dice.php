@@ -20,10 +20,13 @@ $message = $message ?? null;
     <input type="submit" name="submit" value="Spela" />
 </form>
 
-<form method="POST">
-    <label> Slå </label>
-    <input type="submit" name="roll" value="Rulla" />
-<form>
+<?php if ($_SESSION['sum'] <= 21) { ?>
+    <form method="POST">
+        <label> Slå </label>
+        <input type="submit" name="roll" value="Rulla" />
+    <form>
+<?php } ?>
+
 <form method="POST">
     <label> Slå </label>
     <input type="submit" name="rollcomp" value="Rulla Dator" />
@@ -31,15 +34,19 @@ $message = $message ?? null;
 
     <p>UserHand</p>
 
+<?php  if (isset($userHand)) { ?>
     <p><?= $userHand ?></p>
+<?php } ?>
 <?php  if (isset($_SESSION['grapharray'])) {
     foreach ($_SESSION['grapharray'] as $item) { ?>
     <img src="<?= $item ?>" style="height: 50px; width: 50px;" >
 <?php   }
 } ?>
     <p>Computer Hand</p>
-    <p><?= $computerHand ?></p>
 
+<?php  if (isset($computerHand)) { ?>
+    <p><?= $computerHand ?></p>
+<?php } ?>
 <?php   if (isset($_SESSION['compgrapharray'])) {
         foreach ($_SESSION['compgrapharray'] as $item) {  ?>
         <img src="<?= $item ?>" style="height: 50px; width: 50px;" >
@@ -55,3 +62,9 @@ $message = $message ?? null;
         <p> Användarvinster </p>
         <p><?= $_SESSION['userWins'] ?></p>
 <?php  } ?>
+
+
+<form method="POST">
+    <label> Restart </label>
+    <input type="submit" name="restart" value="Börja om" />
+<form>

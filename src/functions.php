@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace jope\Functions;
+namespace Mos\Functions;
 
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;

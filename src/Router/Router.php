@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace jope\Router;
 
-use function jope\Functions\{
+use function Mos\Functions\{
     destroySession,
     redirectTo,
     renderView,

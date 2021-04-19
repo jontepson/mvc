@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace jope\Dice;
 
-use function jope\Functions\{
+use function Mos\Functions\{
     destroySession,
     redirectTo,
     renderView,
@@ -24,19 +24,31 @@ class Game
 {
     public function playGame(): void
     {
+        $result = array();
         $data = [
             "header" => "Dice"
         ];
         $graph = new GraphicalDice();
         $sum = 0;
         if (isset($_POST['dices'])) {
+            $data["userHand"] = 0;
+            $data["computerHand"] = 0;
             $_SESSION["dices"] = $_POST['dices'];
             $_SESSION["sum"] = 0;
             $_SESSION["compsum"] = 0;
             $_SESSION['grapharray'] = array();
             $_SESSION['compgrapharray'] = array();
         }
-
+        
+        if (isset($_POST['restart'])) {
+            $data["userHand"] = 0;
+            $data["computerHand"] = 0;
+            $_SESSION["dices"] = 0;
+            $_SESSION["sum"] = 0;
+            $_SESSION["compsum"] = 0;
+            $_SESSION['grapharray'] = array();
+            $_SESSION['compgrapharray'] = array();
+        }
         $dices = $_SESSION["dices"];
         $diceHand = new DiceHand();
         $diceHand->roll();
@@ -54,12 +66,20 @@ class Game
         $data["userHand"] = $_SESSION["sum"];
 
         if (isset($_POST['rollcomp'])) {
-            while ($_SESSION["compsum"] < $_SESSION["sum"]) {
+            if ($_SESSION['sum'] > 21) {
                 $dice2 = new Dice();
                 $resultcomp = $dice2->roll();
                 $data['graphiccomp'] = $graph->graphic($resultcomp);
                 array_push($_SESSION['compgrapharray'], $data['graphiccomp']);
                 $_SESSION["compsum"] += $resultcomp;
+            } else {
+                while ($_SESSION["compsum"] < $_SESSION["sum"]) {
+                    $dice2 = new Dice();
+                    $resultcomp = $dice2->roll();
+                    $data['graphiccomp'] = $graph->graphic($resultcomp);
+                    array_push($_SESSION['compgrapharray'], $data['graphiccomp']);
+                    $_SESSION["compsum"] += $resultcomp;
+                }
             }
             /**
          * Checks who wins
