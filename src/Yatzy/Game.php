@@ -66,13 +66,9 @@ class Game
         }
         $this->nextRound();
         if (isset($_SESSION['round'])) {
-            if ($_SESSION['round'] == 6 && $_SESSION['sum'] >= 63) {
-                $_SESSION['sum'] += 50;
-                $_SESSION['bonus'] = "Du fick bonusen";
-            } elseif ($_SESSION['round'] == 6 && $_SESSION['sum'] < 63) {
-                $_SESSION['bonus'] = "Du fick ingen bonus";
-            }
+            $this->bonus($_SESSION['round'], $_SESSION['sum']);
         }
+
         /**
          * Checks who wins
          */
@@ -89,29 +85,7 @@ class Game
             $graph = new GraphicalDice();
             $max = 5;
             $_SESSION["round"] += 1;
-            $str = "";
-            switch ($_SESSION['round']) {
-                case 1:
-                    $str = "dice1";
-                    break;
-                case 2:
-                    $str = "dice2";
-                    break;
-                case 3:
-                    $str = "dice3";
-                    break;
-                case 4:
-                    $str = "dice4";
-                    break;
-                case 5:
-                    $str = "dice5";
-                    break;
-                case 6:
-                    $str = "dice6";
-                    break;
-                default:
-                    $str = "";
-            }
+            $str = $graph->graphic($_SESSION['round']);
             $yatzydata['round'] = $_SESSION['round'];
             $tmp = array_count_values($_SESSION['yatzygrapharray']);
             $cnt = $tmp[$str];
@@ -123,6 +97,17 @@ class Game
                 $result[$i] = $dice->roll();
                 $yatzydata['graphic'] = $graph->graphic($result[$i]);
                 array_push($_SESSION['yatzygrapharray'], $yatzydata['graphic']);
+            }
+        }
+    }
+    public function bonus($round, $sum): void
+    {   
+        if (isset($round)) {
+            if ($round == 6 && $sum >= 63) {
+                $sum += 50;
+                $_SESSION['bonus'] = "Du fick bonusen";
+            } elseif ($round == 6 && $sum < 63) {
+                $_SESSION['bonus'] = "Du fick ingen bonus";
             }
         }
     }

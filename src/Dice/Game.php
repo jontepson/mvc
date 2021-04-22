@@ -63,31 +63,36 @@ class Game
             /**
          * Checks who wins
          */
-            if ($_SESSION["sum"] == 21) {
-                $data["message"] = "Grattis";
-                $_SESSION["userWins"] += 1;
-            } else if ($_SESSION["sum"] > 21) {
-                $data["message"] = "Du är tjock";
-                $_SESSION["compWins"] += 1;
-            } else if ($_SESSION["sum"] > $_SESSION["compsum"] && $_SESSION["sum"] < 21) {
-                $data["message"] = "Grattis du vann";
-                $_SESSION["userWins"] += 1;
-            } else if ($_SESSION["sum"] < $_SESSION["compsum"] && $_SESSION["compsum"] < 21) {
-                $data["message"] = "Datorn vann";
-                $_SESSION["compWins"] += 1;
-            } else if ($_SESSION["compsum"] > 21) {
-                $data["message"] = "Datorn är tjock";
-                $_SESSION["userWins"] += 1;
-            } else if ($_SESSION["compsum"] == $_SESSION['sum']) {
-                $data["message"] = "Datorn vinner";
-                $_SESSION["compWins"] += 1;
-            } else if ($_SESSION["compsum"] == 21) {
-                $data["message"] = "Datorn vinner";
-                $_SESSION["compWins"] += 1;
-            }
+            $this->CheckWinner($_SESSION['sum'], $_SESSION['compsum']);
         }
         $data["computerHand"] = $_SESSION["compsum"] ?? 0;
         $body = renderView("layout/dice.php", $data);
         sendResponse($body);
+    }
+
+    public function checkWinner($sum, $compSum): void
+    {
+        if ($sum == 21) {
+            $_SESSION["message"] = "Grattis";
+            $_SESSION["userWins"] += 1;
+        } else if ($sum > 21) {
+            $_SESSION["message"] = "Du är tjock";
+            $_SESSION["compWins"] += 1;
+        } else if ($sum > $compSum && $sum < 21) {
+            $_SESSION["message"] = "Grattis du vann";
+            $_SESSION["userWins"] += 1;
+        } else if ($sum < $compSum && $compSum < 21) {
+            $_SESSION["message"] = "Datorn vann";
+            $_SESSION["compWins"] += 1;
+        } else if ($compSum > 21) {
+            $_SESSION["message"] = "Datorn är tjock";
+            $_SESSION["userWins"] += 1;
+        } else if ($compSum == $_SESSION['sum']) {
+            $_SESSION["message"] = "Datorn vinner";
+            $_SESSION["compWins"] += 1;
+        } else if ($compSum == 21) {
+            $_SESSION["message"] = "Datorn vinner";
+            $_SESSION["compWins"] += 1;
+        }
     }
 }

@@ -13,17 +13,19 @@ $message = $message ?? null;
 
 ?><h1><?= $header ?></h1>
 
-<p><?= $message ?></p>
+
 <form method="POST">
     <label> Tärningar </label>
     <input type="number" name="dices" min="1" max="2" />
     <input type="submit" name="submit" value="Spela" />
 </form>
 
-<form method="POST">
-    <label> Slå </label>
-    <input type="submit" name="roll" value="Rulla" />
-<form>
+<?php   if (isset($_SESSION['sum']) && $_SESSION['sum'] < 22) { ?>
+    <form method="POST">
+        <label> Slå </label>
+        <input type="submit" name="roll" value="Rulla" />
+    <form>
+<?php } ?>
 <form method="POST">
     <label> Slå </label>
     <input type="submit" name="rollcomp" value="Rulla Dator" />
@@ -31,7 +33,9 @@ $message = $message ?? null;
 
     <p>UserHand</p>
 
-
+<?php   if (isset($_SESSION['message'])) {?>
+    <p><?= $_SESSION['message'] ?></p>
+<?php   } ?>
 <?php   if (isset($userHand)) {?>
     <p><?= $userHand ?></p>
 <?php   } ?>

@@ -24,6 +24,8 @@ class GameDiceTest extends TestCase
         $_POST['next'] = true;
         $tmp['dice1'] = 0;
         $controller->playGame();
+        $controller->bonus(6, 63);
+        $controller->bonus(6, 50);
         $this->assertInstanceOf("\jope\Yatzy\Game", $controller);
     }
 }

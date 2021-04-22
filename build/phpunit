@@ -26,7 +26,7 @@ E...<!doctype html>
 <main>
 <h1>Dice</h1>
 
-<p></p>
+
 <form method="POST">
     <label> Tärningar </label>
     <input type="number" name="dices" min="1" max="2" />
@@ -35,15 +35,10 @@ E...<!doctype html>
 
 <form method="POST">
     <label> Slå </label>
-    <input type="submit" name="roll" value="Rulla" />
-<form>
-<form method="POST">
-    <label> Slå </label>
     <input type="submit" name="rollcomp" value="Rulla Dator" />
 <form>
 
     <p>UserHand</p>
-
 
     <p>0</p>
     <p>Computer Hand</p>
@@ -82,7 +77,7 @@ E...<!doctype html>
 <main>
 <h1>Dice</h1>
 
-<p></p>
+
 <form method="POST">
     <label> Tärningar </label>
     <input type="number" name="dices" min="1" max="2" />
@@ -91,15 +86,10 @@ E...<!doctype html>
 
 <form method="POST">
     <label> Slå </label>
-    <input type="submit" name="roll" value="Rulla" />
-<form>
-<form method="POST">
-    <label> Slå </label>
     <input type="submit" name="rollcomp" value="Rulla Dator" />
 <form>
 
     <p>UserHand</p>
-
 
     <p>0</p>
     <p>Computer Hand</p>
@@ -240,17 +230,17 @@ E...<!doctype html>
 <main>
 <h1>Dice</h1>
 
-<p>Datorn vann</p>
+
 <form method="POST">
     <label> Tärningar </label>
     <input type="number" name="dices" min="1" max="2" />
     <input type="submit" name="submit" value="Spela" />
 </form>
 
-<form method="POST">
-    <label> Slå </label>
-    <input type="submit" name="roll" value="Rulla" />
-<form>
+    <form method="POST">
+        <label> Slå </label>
+        <input type="submit" name="roll" value="Rulla" />
+    <form>
 <form method="POST">
     <label> Slå </label>
     <input type="submit" name="rollcomp" value="Rulla Dator" />
@@ -258,13 +248,12 @@ E...<!doctype html>
 
     <p>UserHand</p>
 
-
-    <p>6</p>
-    <img src="../view/img/dice6.png" style="height: 50px; width: 50px;" >
+    <p>Datorn vinner</p>
+    <p>3</p>
+    <img src="../view/img/dice3.png" style="height: 50px; width: 50px;" >
     <p>Computer Hand</p>
-        <p>8</p>
-        <img src="../view/img/dice2.png" style="height: 50px; width: 50px;" >
-        <img src="../view/img/dice6.png" style="height: 50px; width: 50px;" >
+        <p>3</p>
+        <img src="../view/img/dice3.png" style="height: 50px; width: 50px;" >
 
         <p> Datorvinster </p>
         <p>1</p>
@@ -338,32 +327,32 @@ E...<!doctype html>
 <p>Here are some details on the session. Reload this page to see the counter increment itself.</p>
 <p>You may <a href="://C:/Users/cecco/dbwebb-kurser/mvc/me/game/vendor/phpunit/phpunit/session/destroy">destroy the session</a> if you like, good for dealing
 with trouble.</p>string(9) "PHPSESSID"
-array(8) {
+array(9) {
   ["grapharray"]=>
   array(1) {
     [0]=>
-    string(21) "../view/img/dice6.png"
+    string(21) "../view/img/dice3.png"
   }
   ["compgrapharray"]=>
-  array(2) {
+  array(1) {
     [0]=>
-    string(21) "../view/img/dice2.png"
-    [1]=>
-    string(21) "../view/img/dice6.png"
+    string(21) "../view/img/dice3.png"
   }
   ["yatzygrapharray"]=>
   array(0) {
   }
   ["compWins"]=>
-  int(1)
+  int(4)
   ["userWins"]=>
-  int(0)
+  int(3)
   ["dices"]=>
   int(1)
   ["sum"]=>
-  int(6)
+  int(3)
   ["compsum"]=>
-  int(8)
+  int(3)
+  ["message"]=>
+  string(13) "Datorn vinner"
 }
 </main>
 <footer>
@@ -534,9 +523,9 @@ array(71) {
   ["DOCUMENT_ROOT"]=>
   string(0) ""
   ["REQUEST_TIME_FLOAT"]=>
-  float(1619100848.9682)
+  float(1619104379.8448)
   ["REQUEST_TIME"]=>
-  int(1619100848)
+  int(1619104379)
   ["argv"]=>
   array(3) {
     [0]=>
@@ -617,17 +606,17 @@ array(71) {
 <main>
 <h1>Dice</h1>
 
-<p>Datorn vinner</p>
+
 <form method="POST">
     <label> Tärningar </label>
     <input type="number" name="dices" min="1" max="2" />
     <input type="submit" name="submit" value="Spela" />
 </form>
 
-<form method="POST">
-    <label> Slå </label>
-    <input type="submit" name="roll" value="Rulla" />
-<form>
+    <form method="POST">
+        <label> Slå </label>
+        <input type="submit" name="roll" value="Rulla" />
+    <form>
 <form method="POST">
     <label> Slå </label>
     <input type="submit" name="rollcomp" value="Rulla Dator" />
@@ -635,18 +624,19 @@ array(71) {
 
     <p>UserHand</p>
 
-
-    <p>4</p>
-    <img src="../view/img/dice4.png" style="height: 50px; width: 50px;" >
+    <p>Datorn vann</p>
+    <p>5</p>
+    <img src="../view/img/dice5.png" style="height: 50px; width: 50px;" >
     <p>Computer Hand</p>
-        <p>4</p>
-        <img src="../view/img/dice4.png" style="height: 50px; width: 50px;" >
+        <p>9</p>
+        <img src="../view/img/dice3.png" style="height: 50px; width: 50px;" >
+        <img src="../view/img/dice6.png" style="height: 50px; width: 50px;" >
 
         <p> Datorvinster </p>
-        <p>2</p>
+        <p>5</p>
 
         <p> Användarvinster </p>
-        <p>0</p>
+        <p>3</p>
 </main>
 <footer>
     <p>This is the footer.</p>
@@ -679,17 +669,17 @@ array(71) {
 <main>
 <h1>Dice</h1>
 
-<p>Datorn vann</p>
+
 <form method="POST">
     <label> Tärningar </label>
     <input type="number" name="dices" min="1" max="2" />
     <input type="submit" name="submit" value="Spela" />
 </form>
 
-<form method="POST">
-    <label> Slå </label>
-    <input type="submit" name="roll" value="Rulla" />
-<form>
+    <form method="POST">
+        <label> Slå </label>
+        <input type="submit" name="roll" value="Rulla" />
+    <form>
 <form method="POST">
     <label> Slå </label>
     <input type="submit" name="rollcomp" value="Rulla Dator" />
@@ -697,18 +687,18 @@ array(71) {
 
     <p>UserHand</p>
 
-
-    <p>1</p>
-    <img src="../view/img/dice1.png" style="height: 50px; width: 50px;" >
+    <p>Datorn vann</p>
+    <p>2</p>
+    <img src="../view/img/dice2.png" style="height: 50px; width: 50px;" >
     <p>Computer Hand</p>
         <p>5</p>
         <img src="../view/img/dice5.png" style="height: 50px; width: 50px;" >
 
         <p> Datorvinster </p>
-        <p>3</p>
+        <p>6</p>
 
         <p> Användarvinster </p>
-        <p>0</p>
+        <p>3</p>
 </main>
 <footer>
     <p>This is the footer.</p>
@@ -784,15 +774,15 @@ array(71) {
     <p>UserHand</p>
 
 <form method="POST">
-    <img src="../view/img/dice6.png" style="height: 50px; width: 50px;" >
+    <img src="../view/img/dice2.png" style="height: 50px; width: 50px;" >
     <input type="checkbox" name="dices[]" value="0">
-    <img src="../view/img/dice1.png" style="height: 50px; width: 50px;" >
+    <img src="../view/img/dice2.png" style="height: 50px; width: 50px;" >
     <input type="checkbox" name="dices[]" value="1">
-    <img src="../view/img/dice4.png" style="height: 50px; width: 50px;" >
+    <img src="../view/img/dice5.png" style="height: 50px; width: 50px;" >
     <input type="checkbox" name="dices[]" value="2">
-    <img src="../view/img/dice6.png" style="height: 50px; width: 50px;" >
+    <img src="../view/img/dice3.png" style="height: 50px; width: 50px;" >
     <input type="checkbox" name="dices[]" value="3">
-    <img src="../view/img/dice6.png" style="height: 50px; width: 50px;" >
+    <img src="../view/img/dice3.png" style="height: 50px; width: 50px;" >
     <input type="checkbox" name="dices[]" value="4">
 <input type="submit" name="yatzy" value="Yatzy" />
 </form>
@@ -802,7 +792,7 @@ array(71) {
 </form>
 
 
-    <p>Din score är: 2</p>
+    <p>Din score är: 1</p>
 
     <p></p>
 </main>
@@ -813,7 +803,7 @@ array(71) {
 </html>
 .                                34 / 34 (100%)
 
-Time: 00:03.226, Memory: 24.00 MB
+Time: 00:03.065, Memory: 24.00 MB
 
 There were 2 errors:
 
@@ -831,6 +821,6 @@ C:\Users\cecco\dbwebb-kurser\mvc\me\game\test\Function\FunctionsTest.php:86
 ERRORS!
 Tests: 34, Assertions: 33, Errors: 2.
 
-Generating code coverage report in Clover XML format ... done [00:00.032]
+Generating code coverage report in Clover XML format ... done [00:00.036]
 
-Generating code coverage report in HTML format ... done [00:00.201]
+Generating code coverage report in HTML format ... done [00:00.210]

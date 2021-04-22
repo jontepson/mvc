@@ -24,6 +24,13 @@ class GameDiceTest extends TestCase
         $_SESSION['compWins'] = 0;
         $_SESSION['userWins'] = 0;
         $controller->playGame();
+        $controller->checkWinner(21, 24);
+        $controller->checkWinner(13, 24);
+        $controller->checkWinner(19, 17);
+        $controller->checkWinner(22, 20);
+        $controller->checkWinner(13, 17);
+        $controller->checkWinner(17, 17);
+        $controller->checkWinner(13, 21);
         $this->assertInstanceOf("\jope\Dice\Game", $controller);
     }
 }

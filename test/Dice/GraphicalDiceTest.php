@@ -24,6 +24,8 @@ class GraphicalDiceTest extends TestCase
         $controller->graphic(4);
         $controller->graphic(5);
         $controller->graphic(6);
+        $controller->roll();
+        $controller->getLastRoll();
         $this->assertInstanceOf("\jope\Dice\GraphicalDice", $controller);
     }
 
