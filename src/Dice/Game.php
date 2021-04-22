@@ -6,7 +6,6 @@ namespace jope\Dice;
 
 use function Mos\Functions\{
     destroySession,
-    redirectTo,
     renderView,
     renderTwigView,
     sendResponse,
@@ -24,32 +23,20 @@ class Game
 {
     public function playGame(): void
     {
-        $result = array();
         $data = [
             "header" => "Dice"
         ];
         $graph = new GraphicalDice();
         $sum = 0;
         if (isset($_POST['dices'])) {
-            $data["userHand"] = 0;
-            $data["computerHand"] = 0;
             $_SESSION["dices"] = $_POST['dices'];
             $_SESSION["sum"] = 0;
             $_SESSION["compsum"] = 0;
             $_SESSION['grapharray'] = array();
             $_SESSION['compgrapharray'] = array();
         }
-        
-        if (isset($_POST['restart'])) {
-            $data["userHand"] = 0;
-            $data["computerHand"] = 0;
-            $_SESSION["dices"] = 0;
-            $_SESSION["sum"] = 0;
-            $_SESSION["compsum"] = 0;
-            $_SESSION['grapharray'] = array();
-            $_SESSION['compgrapharray'] = array();
-        }
-        $dices = $_SESSION["dices"];
+
+        $dices = $_SESSION["dices"] ?? 0;
         $diceHand = new DiceHand();
         $diceHand->roll();
 
@@ -63,23 +50,15 @@ class Game
             }
             $_SESSION["sum"] += $sum;
         }
-        $data["userHand"] = $_SESSION["sum"];
+        $data["userHand"] = $_SESSION["sum"] ?? 0;
 
         if (isset($_POST['rollcomp'])) {
-            if ($_SESSION['sum'] > 21) {
+            while ($_SESSION["compsum"] < $_SESSION["sum"]) {
                 $dice2 = new Dice();
                 $resultcomp = $dice2->roll();
                 $data['graphiccomp'] = $graph->graphic($resultcomp);
                 array_push($_SESSION['compgrapharray'], $data['graphiccomp']);
                 $_SESSION["compsum"] += $resultcomp;
-            } else {
-                while ($_SESSION["compsum"] < $_SESSION["sum"]) {
-                    $dice2 = new Dice();
-                    $resultcomp = $dice2->roll();
-                    $data['graphiccomp'] = $graph->graphic($resultcomp);
-                    array_push($_SESSION['compgrapharray'], $data['graphiccomp']);
-                    $_SESSION["compsum"] += $resultcomp;
-                }
             }
             /**
          * Checks who wins
@@ -107,7 +86,7 @@ class Game
                 $_SESSION["compWins"] += 1;
             }
         }
-        $data["computerHand"] = $_SESSION["compsum"];
+        $data["computerHand"] = $_SESSION["compsum"] ?? 0;
         $body = renderView("layout/dice.php", $data);
         sendResponse($body);
     }

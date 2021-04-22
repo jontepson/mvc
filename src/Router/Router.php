@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace jope\Router;
+namespace Mos\Router;
 
 use function Mos\Functions\{
     destroySession,

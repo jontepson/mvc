@@ -6,7 +6,6 @@ namespace jope\Yatzy;
 
 use function Mos\Functions\{
     destroySession,
-    redirectTo,
     renderView,
     renderTwigView,
     sendResponse,

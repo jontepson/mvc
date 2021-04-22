@@ -6,7 +6,6 @@ namespace jope\Dice;
 
 use function Mos\Functions\{
     destroySession,
-    redirectTo,
     renderView,
     renderTwigView,
     sendResponse,

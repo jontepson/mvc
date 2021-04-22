@@ -6,7 +6,6 @@ namespace jope\Yatzy;
 
 use function Mos\Functions\{
     destroySession,
-    redirectTo,
     renderView,
     renderTwigView,
     sendResponse,
@@ -41,7 +40,7 @@ class Game
                 array_push($_SESSION['yatzygrapharray'], $yatzydata['graphic']);
             }
         }
-        $yatzydata['round'] = $_SESSION['round'];
+        $yatzydata['round'] = $_SESSION['round'] ?? 0;
         $saveArray = array();
         if (isset($_POST['yatzy'])) {
             if ($_SESSION['rolls'] < 3) {
@@ -66,11 +65,13 @@ class Game
             }
         }
         $this->nextRound();
-        if ($_SESSION['round'] == 6 && $_SESSION['sum'] >= 63) {
-            $_SESSION['sum'] += 50;
-            $_SESSION['bonus'] = "Du fick bonusen";
-        } elseif ($_SESSION['round'] == 6 && $_SESSION['sum'] < 63) {
-            $_SESSION['bonus'] = "Du fick ingen bonus";
+        if (isset($_SESSION['round'])) {
+            if ($_SESSION['round'] == 6 && $_SESSION['sum'] >= 63) {
+                $_SESSION['sum'] += 50;
+                $_SESSION['bonus'] = "Du fick bonusen";
+            } elseif ($_SESSION['round'] == 6 && $_SESSION['sum'] < 63) {
+                $_SESSION['bonus'] = "Du fick ingen bonus";
+            }
         }
         /**
          * Checks who wins
