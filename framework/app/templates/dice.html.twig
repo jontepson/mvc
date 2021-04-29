@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <meta charset="utf-8">
+    <title> Dice Game </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico") ">
+    <link rel="stylesheet" type="text/css" href="css/style.css") ">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href={{ app.request.baseUrl }}/>Home</a> |
+        <a href={{ app.request.baseUrl }}/session>Session</a> |
+        <a href={{ app.request.baseUrl }}/dice>Game 21</a>
+        <a href={{ app.request.baseUrl }}/yatzy>Yatzy</a>
+    </nav>
+</header>
+<main>
+<h1> {{ header }}</h1>
+{% if app.session.get('sum') == 0 %}
+<form method="POST">
+    <label> Tärningar </label>
+    <input type="number" name="dices" min="1" max="2" />
+    <input type="submit" name="submit" value="Spela" />
+</form>
+{% endif %}
+{% if app.session.get('sum') > 0 %}
+<form method="POST">
+    <label> Tärningar </label>
+    <input type="number" name="dices" min="1" max="2" />
+    <input type="submit" name="submit" value="Restart" />
+</form>
+{% endif %}
+{% if app.session.get('sum') < 22 %}
+    <form method="POST">
+        <label> Slå </label>
+        <input type="submit" name="roll" value="Rulla" />
+    <form>
+{% endif %}
+
+<form method="POST">
+    <label> Slå </label>
+    <input type="submit" name="rollcomp" value="Rulla Dator" />
+<form>
+
+    <p>UserHand</p>
+
+{% if app.session.get('message') is defined %}
+    <p> {{ app.session.get('message') }} </p>
+{% endif %}
+
+    <p> {{ userHand }}</p>
+{% if app.session.get('grapharray') is defined %}
+{% for item in app.session.get('grapharray') %}
+    <img src="{{ item }}" style="height: 50px; width: 50px;" >
+{% endfor %}
+{% endif %}
+    <p>Computer Hand</p>
+
+    <p> {{ computerHand }} </p>
+{% if app.session.get('compgrapharray') is defined %}
+{% for item in app.session.get('compgrapharray') %}
+    <img src="{{ item }}" style="height: 50px; width: 50px;" >
+{% endfor %}
+{% endif %}
+
+
+        <p> Datorvinster </p>
+    {% if app.session.get('compWins') is defined %}
+        <p> {{ app.session.get('compWins') }}</p>
+    {% endif %}
+
+        <p> Användarvinster </p>
+         {% if app.session.get('userWins') is defined %}
+        <p> {{ app.session.get('userWins') }} </p>
+     {% endif %}
+</main>
+<footer>
+    <p>This is the footer.</p>
+</footer>
+</body>
+</html>
