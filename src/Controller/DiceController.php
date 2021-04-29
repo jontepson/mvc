@@ -27,6 +27,7 @@ class DiceController
 
         $_SESSION['grapharray'] = array();
         $_SESSION['compgrapharray'] = array();
+        $_SESSION['dices'] = 0;
         $callable = new \jope\Dice\Game();
         $callable->playGame();
         $body = renderView("layout/dice.php", $data);

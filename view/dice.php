@@ -13,13 +13,19 @@ $message = $message ?? null;
 
 ?><h1><?= $header ?></h1>
 
-
+<?php   if ($_SESSION['dices'] > 0) { ?>
 <form method="POST">
+    <label> Tärningar </label>
+    <input type="number" name="dices" min="1" max="2" />
+    <input type="submit" name="submit" value="Restart" />
+</form>
+<?php } else { ?>
+    <form method="POST">
     <label> Tärningar </label>
     <input type="number" name="dices" min="1" max="2" />
     <input type="submit" name="submit" value="Spela" />
 </form>
-
+<?php } ?>
 <?php   if (isset($_SESSION['sum']) && $_SESSION['sum'] < 22) { ?>
     <form method="POST">
         <label> Slå </label>
