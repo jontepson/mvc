@@ -1,0 +1,32 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+hello:
+    path: /hello-world
+    controller: App\Controller\HelloWorldController::helloMessage
+
+hello-view:
+    path: /hello-world-view
+    controller: App\Controller\HelloWorldController::helloMessageView
+
+index:
+    path: /
+    controller: App\Controller\Index
+
+dice_start:
+    path: /dice
+    controller: App\Controller\DiceController::start
+    methods: GET
+
+dice_play:
+    path: /dice
+    controller: App\Controller\DiceController::play
+    methods: POST
+
+session:
+    path: /session
+    controller: App\Controller\Sessions::index
+
+session_destroy:
+    path: /session/destroy
+    controller: App\Controller\Sessions::destroy
