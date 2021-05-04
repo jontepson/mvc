@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <meta charset="utf-8">
+    <title> Index </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico") ">
+    <link rel="stylesheet" type="text/css" href="css/style.css") ">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href={{ app.request.baseUrl }}/>Home</a> |
+        <a href={{ app.request.baseUrl }}/session>Session</a> |
+        <a href={{ app.request.baseUrl }}/dice>Game 21</a>
+        <a href={{ app.request.baseUrl }}/yatzy>Yatzy</a>
+        <a href={{ app.request.baseUrl }}/books>Böcker</a>
+        <a href={{ app.request.baseUrl }}/highscores>Highscores</a>
+    </nav>
+</header>
+<main>
+
+<h1> Books  </h1>
+
+<table>
+<thead>
+    <th>Id</th><th>Namn</th><th>ISBN</th><th>Författare</th><th>Bild</th>
+</thead>
+<tbody>
+    {% for item in books %}
+        <td> {{ item.id }} </td>
+        <td> {{ item.name }} </td>
+        <td> {{ item.ISBN }} </td>
+        <td> {{ item.writer }} </td>
+        <td><img src="{{ item.image }}" style="height: 100px; width: 80px;" ></td>
+        <tr>
+    {% endfor %}
+</tbody>
+</table>
+</main>
+<footer>
+    <p>This is the footer.</p>
+</footer>
+</body>
+</html>
