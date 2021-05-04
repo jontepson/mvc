@@ -1,0 +1,45 @@
+ ------ -------------------------------------- 
+ [32m Line [39m [32m config\cli-config.php                [39m 
+ ------ -------------------------------------- 
+  9      Variable $this might not be defined.  
+ ------ -------------------------------------- 
+
+ ------ ---------------------------------------------------------------------------- 
+ [32m Line [39m [32m src\Book\Book.php                                                          [39m 
+ ------ ---------------------------------------------------------------------------- 
+[39;49m  30     Property App\Book\Book::$ISBN has unknown class App\Book\int§ as its type.[39;49m[39;49m  [39;49m
+[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols          
+ ------ ---------------------------------------------------------------------------- 
+
+ ------ ------------------------------------ 
+ [32m Line [39m [32m src\Controller\BookController.php  [39m 
+ ------ ------------------------------------ 
+  22     Undefined variable: $entityManager  
+ ------ ------------------------------------ 
+
+ ------ ---------------------------------------- 
+ [32m Line [39m [32m src\Controller\HighscoreController.php [39m 
+ ------ ---------------------------------------- 
+  22     Undefined variable: $entityManager      
+ ------ ---------------------------------------- 
+
+ ------ ------------------------------------ 
+ [32m Line [39m [32m src\Dice\Game.php                  [39m 
+ ------ ------------------------------------ 
+  106    Undefined variable: $entityManager  
+  107    Undefined variable: $entityManager  
+ ------ ------------------------------------ 
+
+ ------ ---------------------------------------------------------------------------------------------------- 
+ [32m Line [39m [32m src\Highscore\Highscore.php                                                                        [39m 
+ ------ ---------------------------------------------------------------------------------------------------- 
+[39;49m  17     Property App\Highscore\Highscore::$computerScore has unknown class App\Highscore\int§ as its type.[39;49m[39;49m  [39;49m
+[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols                                  
+[39;49m  22     Property App\Highscore\Highscore::$userScore has unknown class App\Highscore\int§ as its type.[39;49m[39;49m      [39;49m
+[39;49m         [39;49m💡 Learn more at https://phpstan.org/user-guide/discovering-symbols                                  
+ ------ ---------------------------------------------------------------------------------------------------- 
+
+[37;41m                                                                                                                        [39;49m
+[37;41m [ERROR] Found 8 errors                                                                                                 [39;49m
+[37;41m                                                                                                                        [39;49m
+
