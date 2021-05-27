@@ -1,0 +1,71 @@
+
+<!doctype html>
+<html>
+    <meta charset="utf-8">
+    <title> Index </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico") ">
+    <link rel="stylesheet" type="text/css" href="css/style.css") ">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href={{ app.request.baseUrl }}/>Home</a> |
+        <a href={{ app.request.baseUrl }}/session>Session</a> |
+        <a href={{ app.request.baseUrl }}/dice>Game 21</a>
+        <a href={{ app.request.baseUrl }}/yatzy>Yatzy</a>
+        <a href={{ app.request.baseUrl }}/books>Böcker</a>
+        <a href={{ app.request.baseUrl }}/highscores>Highscores</a>
+    </nav>
+</header>
+<main>
+
+<h1> Highscores  </h1>
+
+<h2> 21 Game </h2>
+<table class="diceTable">
+<thead>
+    <th>Id</th><th>UserScore</th><th>ComputerScore</th>
+</thead>
+<tbody>
+    {% for item in scores %}
+        <td> {{ item.id }} </td>
+        {% if item.userScore > item.computerScore or item.userScore == 21 %}
+            <td class="winner"> {{ item.userScore }} </td>
+            <td class="loser"> {{ item.computerScore }} </td>
+        {% endif%}
+        {% if item.userScore <= item.computerScore and item.userScore != 21 %}
+            <td class="loser"> {{ item.userScore }} </td>
+            <td class="winner"> {{ item.computerScore }} </td>
+        {% endif%}
+        <tr>
+    {% endfor %}
+</tbody>
+</table>
+
+
+<h2> Yatzy Game </h2>
+<table class="yatzyTable">
+<thead>
+    <th>Id</th><th>Score</th><th>Överdel</th><th>Underdel</th><th>Bonus</th><th>Namn</th>
+</thead>
+<tbody>
+    {% for item in yatzyScores %}
+        <td> {{ item.id }} </td>
+        <td> {{ item.score }} </td>
+        <td> {{ item.lowerScore }} </td>
+        <td> {{ item.upperScore }} </td>
+        <td> {{ item.bonus }} </td>
+        <td> {{ item.name }} </td>
+        <tr>
+    {% endfor %}
+</tbody>
+</table>
+</main>
+<footer>
+    <p>This is the footer.</p>
+</footer>
+</body>
+</html>

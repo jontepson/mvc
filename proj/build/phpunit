@@ -1,0 +1,48 @@
+PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
+
+EEE..EE....                                                       11 / 11 (100%)
+
+Time: 00:00.591, Memory: 20.00 MB
+
+There were 5 errors:
+
+1) App\Controller\ControllerDiceTest::testCreateTheControllerClass
+Error: Call to a member function get() on null
+
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\vendor\symfony\framework-bundle\Controller\AbstractController.php:123
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Controller\DiceController.php:20
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\test\Controller\ControllerDiceTest.php:21
+
+2) App\Controller\ControllerDiceTest::testTheControllerClass
+Error: Call to a member function get() on null
+
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\vendor\symfony\framework-bundle\Controller\AbstractController.php:123
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Controller\DiceController.php:30
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\test\Controller\ControllerDiceTest.php:28
+
+3) App\Controller\ControllerHelloWorldTest::testCreateTheControllerClass
+Error: Call to a member function has() on null
+
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\vendor\symfony\framework-bundle\Controller\AbstractController.php:245
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\vendor\symfony\framework-bundle\Controller\AbstractController.php:257
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Controller\HelloWorldController.php:21
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\test\Controller\ControllerHelloWorldTest.php:24
+
+4) App\Controller\ControllerSessionsTest::testControllerReturnsResponse
+Error: Call to a member function get() on null
+
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\vendor\symfony\framework-bundle\Controller\AbstractController.php:123
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Controller\Sessions.php:21
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\test\Controller\ControllerSessionsTest.php:33
+
+5) App\Controller\ControllerSessionsTest::testDestroySession
+Error: Call to a member function get() on null
+
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\vendor\symfony\framework-bundle\Controller\AbstractController.php:123
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Controller\Sessions.php:30
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\test\Controller\ControllerSessionsTest.php:52
+
+ERRORS!
+Tests: 11, Assertions: 6, Errors: 5.
+
+Generating code coverage report in Clover XML format ... Call to undefined method SebastianBergmann\CodeCoverage\CodeCoverage::getDoctrine()

@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+    <meta charset="utf-8">
+    <title> Yatzy Game </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico") ">
+    <link rel="stylesheet" type="text/css" href="css/style.css") ">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href={{ app.request.baseUrl }}/>Home</a> |
+        <a href={{ app.request.baseUrl }}/session>Session</a> |
+        <a href={{ app.request.baseUrl }}/dice>Game 21</a>
+        <a href={{ app.request.baseUrl }}/yatzy>Yatzy</a>
+        <a href={{ app.request.baseUrl }}/books>Böcker</a>
+        <a href={{ app.request.baseUrl }}/highscores>Highscores</a>
+    </nav>
+</header>
+<main>
+<h1> {{ header }}</h1>
+<h1> {{ app.session.get('message') }}
+<form method="POST">
+    <label> Starta </label>
+    <input type="submit" name="roll" value="Start / Restart" />
+</form>
+
+{% if app.session.get('endgame') %}
+<form method="POST">
+{% if app.session.get('yatzygrapharray') is defined %}
+    {% for item in app.session.get('yatzygrapharray') %}
+        <img src="{{ item }}" style="height: 50px; width: 50px;">
+        <input type="checkbox" name="dices[]" value="{{ item }}">
+    {% endfor %}
+{% endif %}
+<input type="submit" name="nextRoll" value="Rulla tärningar" />
+</form>
+
+<h2> Spara och spela nästa runda </h2>
+
+<div class="parent">
+<div class="div1 box"> 
+{% if app.session.get('ettor') == 0 %}
+    <form method="POST">
+    <input type="submit" name="ettor" value="Ettor" />
+    <input type="submit" name="ettorThrow" value="Stryk" />
+</form>
+{% endif %}
+</div>
+
+<div class="div2 box">
+{% if app.session.get('tvåor') == 0 %}
+    <form method="POST">
+    <input type="submit" name="tvåor" value="Tvåor" />
+    <input type="submit" name="tvåorThrow" value="Stryk" />
+</form>
+{% endif %}
+</div>
+<div class="div3 box">
+{% if app.session.get('treor') == 0 %}
+    <form method="POST">
+    <input type="submit" name="treor" value="Treor" />
+    <input type="submit" name="treorThrow" value="Stryk" />
+</form>
+{% endif %}
+</div>
+<div class="div4 box">
+{% if app.session.get('fyror') == 0 %}
+    <form method="POST">
+    <input type="submit" name="fyror" value="Fyror" />
+    <input type="submit" name="fyrorThrow" value="Stryk" />
+</form>
+{% endif %}
+</div>
+<div class="div5 box">
+{% if app.session.get('femmor') == 0 %}
+    <form method="POST">
+    <input type="submit" name="femmor" value="Femmor" />
+    <input type="submit" name="femmorThrow" value="Stryk" />
+</form>
+{% endif %}
+</div>
+<div class="div6 box">
+{% if app.session.get('sexor') == 0 %}
+    <form method="POST">
+    <input type="submit" name="sexor" value="Sexor" />
+    <input type="submit" name="sexorThrow" value="Stryk" />
+</form>
+{% endif %}
+</div>
+<div class="div7 box">
+{% if app.session.get('par') == 0 %}
+    <form method="POST">
+    <input type="submit" name="par" value="Par" />
+    <input type="submit" name="parThrow" value="Stryk" />
+</form>
+{% endif %}
+</div>
+<div class="div8 box">
+{% if app.session.get('2par') == 0 %}
+    <form method="POST">
+    <input type="submit" name="2par" value="2 par" />
+    <input type="submit" name="2parThrow" value="Stryk" />
+</form>
+{% endif %}
+</div>
+<div class="div9 box">
+{% if app.session.get('tretal') == 0 %}
+<form method="POST">
+    <input type="submit" name="tretal" value="Tretal" />
+    <input type="submit" name="tretalThrow" value="Stryk" />
+</form>
+{% endif %}</div>
+<div class="div10 box">
+{% if app.session.get('fyrtal') == 0 %}
+    <form method="POST">
+    <input type="submit" name="fyrtal" value="Fyrtal" />
+    <input type="submit" name="fyrtalThrow" value="Stryk" />
+</form>
+{% endif %}
+</div>
+<div class="div11 box">
+{% if app.session.get('Lstege') == 0 %}
+    <form method="POST">
+    <input type="submit" name="Lstege" value="Liten Stege" />
+    <input type="submit" name="LstegeThrow" value="Stryk" />
+</form>
+{% endif %}
+</div>
+<div class="div12 box">
+{% if app.session.get('Sstege') == 0 %}
+    <form method="POST">
+    <input type="submit" name="Sstege" value="Stor stege" />
+    <input type="submit" name="SstegeThrow" value="Stryk" />
+</form>
+{% endif %}
+</div>
+<div class="div13 box">
+{% if app.session.get('kåk') == 0 %}
+    <form method="POST">
+    <input type="submit" name="kåk" value="Kåk" />
+    <input type="submit" name="kåkThrow" value="Stryk" />
+</form>
+{% endif %}
+</div>
+<div class="div14 box">
+{% if app.session.get('chans') == 0 %}
+    <form method="POST">
+    <input type="submit" name="chans" value="Chans" />
+    <input type="submit" name="chansThrow" value="Stryk" />
+</form>
+{% endif %}
+</div>
+<div class="div15 box">
+{% if app.session.get('yatzy') == 0 %}
+    <form method="POST">
+    <input type="submit" name="yatzy" value="Yatzy" />
+    <input type="submit" name="yatzyThrow" value="Stryk" />
+</form>
+{% endif %}
+</div>
+</div>
+
+
+{% if app.session.get('sum') is defined %}
+    <p>Din score är: {{ app.session.get('sum') }}</p>
+{% endif %}
+
+{% if app.session.get('bonusMessage') is defined %}
+    <p> {{ app.session.get('bonusMessage') }}</p>
+{% endif %}
+{% else %}
+{% if app.session.get('sum') is defined %}
+    <h1>Du fick: {{ app.session.get('sum') }} poäng</h1>
+{% endif %}
+<form method="POST">
+    <label>Namn</label>
+    <input type="text" name="namn"/>
+    <input type="submit" name="save" value="Spara" />
+</form>
+{% endif %}
+</main>
+<footer>
+    <p>This is the footer.</p>
+</footer>
+</body>
+</html>
