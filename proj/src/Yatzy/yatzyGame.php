@@ -158,7 +158,7 @@ class yatzyGame
                 $session->set('bonus', 50);
                 $session->set('round', $session->get('round') + 1);
                 $session->set('bonusMessage', "Du fick bonusen");
-            } elseif ($round == 5 && $sum < 63) {
+            } elseif ($round == 6 && $sum < 63) {
                 $session->set('bonusMessage', "Du fick ingen bonus");
             }
         }
