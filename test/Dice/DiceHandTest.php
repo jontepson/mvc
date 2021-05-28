@@ -23,5 +23,4 @@ class DiceHandTest extends TestCase
         $controller->getSum();
         $this->assertInstanceOf("\App\Dice\DiceHand", $controller);
     }
-
 }

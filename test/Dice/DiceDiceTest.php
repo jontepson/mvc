@@ -22,5 +22,4 @@ class DiceDiceTest extends TestCase
         $controller->getLastRoll();
         $this->assertInstanceOf("\App\Dice\Dice", $controller);
     }
-
 }

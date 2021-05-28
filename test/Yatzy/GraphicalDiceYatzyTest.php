@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Yatzy;
+namespace App\Dice;
 
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
@@ -26,7 +26,6 @@ class GraphicalDiceYatzyTest extends TestCase
         $controller->graphic(6);
         $controller->roll();
         $controller->getLastRoll();
-        $this->assertInstanceOf("\App\Yatzy\GraphicalDice", $controller);
+        $this->assertInstanceOf("\App\Dice\GraphicalDice", $controller);
     }
-
 }

@@ -88,11 +88,11 @@ function renderTwigView(
   *
   * @return void
   */
- function sendResponse(string $body, int $status = 200): void
- {
-     http_response_code($status);
-     echo $body;
- }
+function sendResponse(string $body, int $status = 200): void
+{
+    http_response_code($status);
+    echo $body;
+}
 //
 //
 //

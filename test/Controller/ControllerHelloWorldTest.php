@@ -26,5 +26,4 @@ class ControllerHelloWorldTest extends TestCase
         $controller->helloWithArgument("hello");
         $this->assertInstanceOf("\App\Controller\HelloWorldController", $controller);
     }
-
 }

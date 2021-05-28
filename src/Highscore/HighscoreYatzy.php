@@ -9,30 +9,28 @@ class HighscoreYatzy
      */
     protected $id;
 
-    
-
     /**
-     * @var int§
+     * @var int
      */
     protected $bonus;
 
     /**
-     * @var int§
+     * @var int
      */
     protected $score;
 
     /**
-     * @var int§
+     * @var int
      */
     protected $lowerScore;
 
     /**
-     * @var int§
+     * @var int
      */
     protected $upperScore;
 
     /**
-     * @var int§
+     * @var int
      */
     protected $name;
 
@@ -91,6 +89,4 @@ class HighscoreYatzy
     {
         $this->name = $name;
     }
-    
-    
 }

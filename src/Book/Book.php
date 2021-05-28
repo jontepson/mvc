@@ -25,7 +25,7 @@ class Book
     protected $image;
 
     /**
-     * @var int§
+     * @var int
      */
     protected $ISBN;
 
@@ -73,4 +73,3 @@ class Book
         $this->image = $image;
     }
 }
-

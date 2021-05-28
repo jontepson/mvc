@@ -24,7 +24,7 @@ class GameDiceTest extends TestCase
         $controller = new Game();
         $controller->playGame($session);
         $this->assertInstanceOf("\App\Dice\Game", $controller);
-    
+
         $_POST['dices'] = 1;
         $_POST['roll'] = 0;
         $_POST['rollcomp'] = true;
@@ -35,9 +35,7 @@ class GameDiceTest extends TestCase
         $controller->checkWinner(8, 24, $session);
         $controller->checkWinner(16, 16, $session);
         $controller->checkWinner(17, 21, $session);
-        
-        $this->assertInstanceOf("\App\Dice\Game", $controller);
-        
 
+        $this->assertInstanceOf("\App\Dice\Game", $controller);
     }
 }

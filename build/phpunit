@@ -1,8 +1,8 @@
 PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
 
-EEE..EE..E....                                                    14 / 14 (100%)
+.EEE..EE..E......                                                 17 / 17 (100%)
 
-Time: 00:00.805, Memory: 24.00 MB
+Time: 00:00.856, Memory: 30.00 MB
 
 There were 6 errors:
 
@@ -10,14 +10,14 @@ There were 6 errors:
 Error: Call to a member function get() on null
 
 C:\Users\cecco\dbwebb-kurser\mvc\me\proj\vendor\symfony\framework-bundle\Controller\AbstractController.php:123
-C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Controller\DiceController.php:20
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Controller\DiceController.php:22
 C:\Users\cecco\dbwebb-kurser\mvc\me\proj\test\Controller\ControllerDiceTest.php:21
 
 2) App\Controller\ControllerDiceTest::testTheControllerClass
 Error: Call to a member function get() on null
 
 C:\Users\cecco\dbwebb-kurser\mvc\me\proj\vendor\symfony\framework-bundle\Controller\AbstractController.php:123
-C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Controller\DiceController.php:30
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Controller\DiceController.php:32
 C:\Users\cecco\dbwebb-kurser\mvc\me\proj\test\Controller\ControllerDiceTest.php:28
 
 3) App\Controller\ControllerHelloWorldTest::testCreateTheControllerClass
@@ -32,28 +32,27 @@ C:\Users\cecco\dbwebb-kurser\mvc\me\proj\test\Controller\ControllerHelloWorldTes
 Error: Call to a member function get() on null
 
 C:\Users\cecco\dbwebb-kurser\mvc\me\proj\vendor\symfony\framework-bundle\Controller\AbstractController.php:123
-C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Controller\Sessions.php:21
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Controller\Sessions.php:19
 C:\Users\cecco\dbwebb-kurser\mvc\me\proj\test\Controller\ControllerSessionsTest.php:33
 
 5) App\Controller\ControllerSessionsTest::testDestroySession
 Error: Call to a member function get() on null
 
 C:\Users\cecco\dbwebb-kurser\mvc\me\proj\vendor\symfony\framework-bundle\Controller\AbstractController.php:123
-C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Controller\Sessions.php:30
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Controller\Sessions.php:28
 C:\Users\cecco\dbwebb-kurser\mvc\me\proj\test\Controller\ControllerSessionsTest.php:52
 
 6) App\Dice\GameDiceTest::testCreateTheClass
-Use of undefined constant __ROOT__ - assumed '__ROOT__' (this will throw an Error in a future version of PHP)
+Undefined variable: entityManager
 
 C:\Users\cecco\dbwebb-kurser\mvc\me\proj\vendor\symfony\phpunit-bridge\DeprecationErrorHandler.php:125
-C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Dice\Game.php:104
-C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Dice\Game.php:100
-C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Dice\Game.php:69
-C:\Users\cecco\dbwebb-kurser\mvc\me\proj\test\Dice\GameDiceTest.php:31
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Dice\Game.php:111
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Dice\Game.php:99
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\test\Dice\GameDiceTest.php:32
 
 ERRORS!
-Tests: 14, Assertions: 9, Errors: 6.
+Tests: 17, Assertions: 12, Errors: 6.
 
-Generating code coverage report in Clover XML format ... done [00:00.105]
+Generating code coverage report in Clover XML format ... done [00:00.058]
 
-Generating code coverage report in HTML format ... done [00:00.163]
+Generating code coverage report in HTML format ... done [00:00.153]

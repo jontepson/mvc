@@ -9,10 +9,10 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
 /**
  * Controller for the index route.
  */
-
 class Index extends AbstractController
 {
     public function __invoke(): Response
@@ -21,7 +21,5 @@ class Index extends AbstractController
             "header" => "Index page",
             "message" => "Hello, this is the index page, rendered as a layout."
         ]);
-        
-        
     }
 }

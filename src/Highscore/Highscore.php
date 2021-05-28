@@ -9,15 +9,13 @@ class Highscore
      */
     protected $id;
 
-    
-
     /**
-     * @var int§
+     * @var int
      */
     protected $computerScore;
 
     /**
-     * @var int§
+     * @var int
      */
     protected $userScore;
 
@@ -46,6 +44,4 @@ class Highscore
     {
         $this->userScore = $userScore;
     }
-    
-    
 }

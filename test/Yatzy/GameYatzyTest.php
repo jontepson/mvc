@@ -22,10 +22,9 @@ class GameDiceTest extends TestCase
     {
 
         $session = new Session(new MockArraySessionStorage());
-        
         $session->set('dices', 0);
-        $session->get('dices'); 
-        $controller = new yatzyGame();
+        $session->get('dices');
+        $controller = new YatzyGame();
 
         $controller->playGame($session);
         $controller->value("../templates/img/dice1.png");
@@ -37,71 +36,72 @@ class GameDiceTest extends TestCase
         $controller->nextRound($session);
         $controller->bonus(6, 64, $session);
         $controller->bonus(6, 55, $session);
+
         // Spara överdel
-        $_POST['ettor'] = TRUE;
+        $_POST['ettor'] = true;
         $controller->saveBasic($session);
-        $_POST['tvåor'] = TRUE;
+        $_POST['tvåor'] = true;
         $controller->saveBasic($session);
-        $_POST['treor'] = TRUE;
+        $_POST['treor'] = true;
         $controller->saveBasic($session);
-        $_POST['fyror'] = TRUE;
+        $_POST['fyror'] = true;
         $controller->saveBasic($session);
-        $_POST['femmor'] = TRUE;
+        $_POST['femmor'] = true;
         $controller->saveBasic($session);
-        $_POST['sexor'] = TRUE;
+        $_POST['sexor'] = true;
         $controller->saveBasic($session);
 
-        // Kasta 
-        $_POST['ettorThrow'] = TRUE;
+        // Kasta
+        $_POST['ettorThrow'] = true;
         $controller->throw($session);
-        $_POST['tvåorThrow'] = TRUE;
+        $_POST['tvåorThrow'] = true;
         $controller->throw($session);
-        $_POST['treorThrow'] = TRUE;
+        $_POST['treorThrow'] = true;
         $controller->throw($session);
-        $_POST['fyrorThrow'] = TRUE;
+        $_POST['fyrorThrow'] = true;
         $controller->throw($session);
-        $_POST['femmorThrow'] = TRUE;
+        $_POST['femmorThrow'] = true;
         $controller->throw($session);
-        $_POST['sexorThrow'] = TRUE;
+        $_POST['sexorThrow'] = true;
         $controller->throw($session);
-        $_POST['parThrow'] = TRUE;
+        $_POST['parThrow'] = true;
         $controller->throw($session);
-        $_POST['2parThrow'] = TRUE;
+        $_POST['2parThrow'] = true;
         $controller->throw($session);
-        $_POST['tretalThrow'] = TRUE;
+        $_POST['tretalThrow'] = true;
         $controller->throw($session);
-        $_POST['fyrtalThrow'] = TRUE;
+        $_POST['fyrtalThrow'] = true;
         $controller->throw($session);
-        $_POST['LstegeThrow'] = TRUE;
+        $_POST['LstegeThrow'] = true;
         $controller->throw($session);
-        $_POST['SstegeThrow'] = TRUE;
+        $_POST['SstegeThrow'] = true;
         $controller->throw($session);
-        $_POST['kåkThrow'] = TRUE;
+        $_POST['kåkThrow'] = true;
         $controller->throw($session);
-        $_POST['chansThrow'] = TRUE;
+        $_POST['chansThrow'] = true;
         $controller->throw($session);
-        $_POST['yatzyThrow'] = TRUE;
+        $_POST['yatzyThrow'] = true;
         $controller->throw($session);
 
         // Spara nederdel
-        $_POST['par'] = TRUE;
+        $_POST['par'] = true;
         $controller->saveDown($session);
-        $_POST['2par'] = TRUE;
+        $_POST['2par'] = true;
         $controller->saveDown($session);
-        $_POST['tretal'] = TRUE;
+        $_POST['tretal'] = true;
         $controller->saveDown($session);
-        $_POST['fyrtal'] = TRUE;
+        $_POST['fyrtal'] = true;
         $controller->saveDown($session);
-        $_POST['Lstege'] = TRUE;
+        $_POST['Lstege'] = true;
         $controller->saveDown($session);
-        $_POST['Sstege'] = TRUE;
+        $_POST['Sstege'] = true;
         $controller->saveDown($session);
-        $_POST['kåk'] = TRUE;
+        $_POST['kåk'] = true;
         $controller->saveDown($session);
-        $_POST['chans'] = TRUE;
+        $_POST['chans'] = true;
         $controller->saveDown($session);
-        $_POST['yatzy'] = TRUE;
+        $_POST['yatzy'] = true;
         $controller->saveDown($session);
-        $this->assertInstanceOf("\App\Yatzy\yatzyGame", $controller);
+        $this->assertInstanceOf("\App\Yatzy\YatzyGame", $controller);
     }
 }

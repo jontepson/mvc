@@ -28,5 +28,4 @@ class GraphicalDiceTest extends TestCase
         $controller->getLastRoll();
         $this->assertInstanceOf("\App\Dice\GraphicalDice", $controller);
     }
-
 }

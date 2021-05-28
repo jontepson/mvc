@@ -4,17 +4,16 @@ declare(strict_types=1);
 
 namespace App\Yatzy;
 
-
 use App\Yatzy\Dice;
-use App\Yatzy\GraphicalDice;
+use App\Dice\GraphicalDice;
 use App\Highscore\HighscoreYatzy;
 
 /**
  * Class Game.
  */
 
-define('__ROOT__', dirname(dirname(__DIR__)));
-class yatzyGame
+
+class YatzyGame
 {
     public function playGame($session): array
     {
@@ -53,7 +52,7 @@ class yatzyGame
             $session->set('kåk', 0);
             $session->set('chans', 0);
             $session->set('yatzy', 0);
-            $session->set('endgame', TRUE);
+            $session->set('endgame', true);
             for ($i = 0; $i < $max; $i++) {
                 $dice = new Dice();
                 $result[$i] = $dice->roll();
@@ -77,7 +76,7 @@ class yatzyGame
                     $session->set('yatzygrapharray', array());
                     $temparray = array();
                     foreach ($saveArray as $item) {
-                       array_push($temparray, $item);
+                        array_push($temparray, $item);
                     }
                     $session->set('yatzygrapharray', $temparray);
                 } else {
@@ -132,7 +131,7 @@ class yatzyGame
         return $int;
     }
     public function nextRound($session): void
-    {   
+    {
         $result = array();
         $yatzydata = array();
         $yatzydata['header'] = 'Yatzy';
@@ -151,7 +150,7 @@ class yatzyGame
     }
 
     public function bonus($round, $sum, $session): void
-    {   
+    {
         if (isset($round)) {
             if ($round == 6 && $sum >= 63) {
                 $sum += 50;
@@ -320,7 +319,7 @@ class yatzyGame
             $pairArray = array();
             $array = $session->get('yatzygrapharray');
             $countArray = array_count_values($array);
-            $arrayChunks = array_chunk($countArray, 1, TRUE);
+            $arrayChunks = array_chunk($countArray, 1, true);
             foreach ($arrayChunks as $key => $value) {
                 foreach ($value as $secondkey => $secondvalue) {
                     if ($secondvalue == 2) {
@@ -333,10 +332,8 @@ class yatzyGame
                 }
             }
             if (sizeof($pairArray) == 2) {
-                
                 $score1 = $this->value($pairArray[0]);
                 $score2 = $this->value($pairArray[1]);
-
                 if ($score1 > $score2) {
                     $score = $score1 * 2;
                     $session->set('downSum', $session->get('downSum') + $score);
@@ -347,7 +344,7 @@ class yatzyGame
                 $session->set('par', 1);
                 $session->set('message', '');
                 $this->nextRound($session);
-            } elseif(sizeof($pairArray) == 1) {
+            } elseif (sizeof($pairArray) == 1) {
                 $score = $this->value($pairArray[0]) * 2;
                 $session->set('downSum', $session->get('downSum') + $score);
                 $session->set('par', 1);
@@ -362,7 +359,7 @@ class yatzyGame
             $pairArray = array();
             $array = $session->get('yatzygrapharray');
             $countArray = array_count_values($array);
-            $arrayChunks = array_chunk($countArray, 1, TRUE);
+            $arrayChunks = array_chunk($countArray, 1, true);
             foreach ($arrayChunks as $key => $value) {
                 foreach ($value as $secondkey => $secondvalue) {
                     if ($secondvalue == 2) {
@@ -462,7 +459,7 @@ class yatzyGame
                 $session->set('message', '');
                 $this->nextRound($session);
                 return;
-            } elseif (array_values($countArray)[1] == 2 && array_values($countArray)[0] == 3){
+            } elseif (array_values($countArray)[1] == 2 && array_values($countArray)[0] == 3) {
                 $diceValue1 = $this->value(array_keys($countArray)[1]);
                 $diceValue2 = $this->value(array_keys($countArray)[0]);
                 $score1 = $diceValue1 * 2;
@@ -487,8 +484,6 @@ class yatzyGame
             }
             $session->set('chans', 1);
             $this->nextRound($session);
-            
-
         }
 
 
@@ -509,10 +504,10 @@ class yatzyGame
 
     public function gameEnd($session): void
     {
-        $endGame = TRUE;
-        $session->set('endgame', TRUE);
-        if ($boxCounter = $session->get('ettor') == 1 && $session->get('tvåor') == 1 && $session->get('treor') == 1 && $session->get('fyror') == 1 && $session->get('femmor') == 1 && $session->get('sexor') == 1 && $session->get('par') == 1 && $session->get('2par') == 1 && $session->get('tretal') == 1 && $session->get('fyrtal') == 1 && $session->get('Lstege') == 1 && $session->get('Sstege') == 1 && $session->get('kåk') == 1 && $session->get('chans') == 1&& $session->get('yatzy') == 1) {
-            $session->set('endgame', FALSE);
+        $endGame = true;
+        $session->set('endgame', true);
+        if ($boxCounter = $session->get('ettor') == 1 && $session->get('tvåor') == 1 && $session->get('treor') == 1 && $session->get('fyror') == 1 && $session->get('femmor') == 1 && $session->get('sexor') == 1 && $session->get('par') == 1 && $session->get('2par') == 1 && $session->get('tretal') == 1 && $session->get('fyrtal') == 1 && $session->get('Lstege') == 1 && $session->get('Sstege') == 1 && $session->get('kåk') == 1 && $session->get('chans') == 1 && $session->get('yatzy') == 1) {
+            $session->set('endgame', false);
             //var_dump('endgame');
         }
     }
@@ -526,8 +521,8 @@ class yatzyGame
             } else {
                 $yatzyHighscore->setName("Anonym");
             }
-
-            require_once __ROOT__ .  "/bin/bootstrap.php";
+            $root = dirname(dirname(dirname(__FILE__)));
+            require_once($root . "/bin/bootstrap.php");
 
             $yatzyHighscore->setScore($session->get('sum'));
             $yatzyHighscore->setlowerScore($session->get('basicSum'));

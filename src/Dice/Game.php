@@ -20,7 +20,6 @@ use App\Highscore\Highscore;
 
 class Game extends AbstractController
 {
-    
     public function playGame($session): array
     {
         $data = [
@@ -97,11 +96,13 @@ class Game extends AbstractController
             $session->set("message", "Datorn vinner");
             $session->set("compWins", $session->get("compWins") + 1);
         }
-        $this->saveToDatabase();
+        $this->saveToDatabase($sum, $compSum);
     }
-    public function saveToDatabase(): void 
+
+    public function saveToDatabase($sum, $compSum): void
     {
-        require_once __ROOT__ .  "/bin/bootstrap.php";
+        $root = dirname(dirname(dirname(__FILE__)));
+        require_once($root . "/bin/bootstrap.php");
 
         $highscore = new Highscore();
         $highscore->setUserScore($sum);

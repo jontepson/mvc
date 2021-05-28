@@ -24,6 +24,7 @@
 <h1> {{ app.session.get('message') }}
 <form method="POST">
     <label> Starta </label>
+    <br>
     <input type="submit" name="roll" value="Start / Restart" />
 </form>
 
@@ -37,7 +38,9 @@
 {% endif %}
 <input type="submit" name="nextRoll" value="Rulla tärningar" />
 </form>
-
+{% if app.session.get('sum') is defined %}
+    <h2>Din score är: {{ app.session.get('sum') }}</h2>
+{% endif %}
 <h2> Spara och spela nästa runda </h2>
 
 <div class="parent">
@@ -183,7 +186,7 @@
 {% endif %}
 </main>
 <footer>
-    <p>This is the footer.</p>
+    <p>© 2020 Gandalf</p>
 </footer>
 </body>
 </html>
