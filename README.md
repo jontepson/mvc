@@ -1,5 +1,10 @@
 [![Build Status](https://travis-ci.org/jontepson/mvc.svg?branch=master)](https://travis-ci.org/jontepson/mvc)
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jontepson/mvc/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/jontepson/mvc/?branch=main)
+
+[![Code Coverage](https://scrutinizer-ci.com/g/jontepson/mvc/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/jontepson/mvc/?branch=main)
+
+[![Build Status](https://scrutinizer-ci.com/g/jontepson/mvc/badges/build.png?b=main)](https://scrutinizer-ci.com/g/jontepson/mvc/build-status/main)
 # MVC Project
 
 This MVC project is a place where you can play a simple game to 21 or a yatzy game.
