@@ -2,7 +2,7 @@ PHPUnit 9.5.4 by Sebastian Bergmann and contributors.
 
 .EEE..EE..E......                                                 17 / 17 (100%)
 
-Time: 00:00.856, Memory: 30.00 MB
+Time: 00:00.877, Memory: 30.00 MB
 
 There were 6 errors:
 
@@ -46,13 +46,13 @@ C:\Users\cecco\dbwebb-kurser\mvc\me\proj\test\Controller\ControllerSessionsTest.
 Undefined variable: entityManager
 
 C:\Users\cecco\dbwebb-kurser\mvc\me\proj\vendor\symfony\phpunit-bridge\DeprecationErrorHandler.php:125
-C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Dice\Game.php:111
-C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Dice\Game.php:99
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Dice\Game.php:112
+C:\Users\cecco\dbwebb-kurser\mvc\me\proj\src\Dice\Game.php:100
 C:\Users\cecco\dbwebb-kurser\mvc\me\proj\test\Dice\GameDiceTest.php:32
 
 ERRORS!
 Tests: 17, Assertions: 12, Errors: 6.
 
-Generating code coverage report in Clover XML format ... done [00:00.058]
+Generating code coverage report in Clover XML format ... done [00:00.057]
 
-Generating code coverage report in HTML format ... done [00:00.153]
+Generating code coverage report in HTML format ... done [00:00.154]

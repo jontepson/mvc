@@ -82,7 +82,8 @@ class YatzyGame
                 } else {
                     $session->set('yatzygrapharray', array());
                 }
-                for ($i = 0; $i < $max - count($saveArray); $i++) {
+                $min = count($saveArray);
+                for ($i = 0; $i < $max - $min; $i++) {
                     $dice = new Dice();
                     $result[$i] = $dice->roll();
                     $yatzydata['graphic'] = $graph->graphic($result[$i]);
@@ -106,7 +107,7 @@ class YatzyGame
 
     public function value($string): ?int
     {
-        $int = "";
+        $int = 0;
         switch ($string) {
             case "../templates/img/dice1.png":
                 $int = 1;
@@ -504,9 +505,8 @@ class YatzyGame
 
     public function gameEnd($session): void
     {
-        $endGame = true;
         $session->set('endgame', true);
-        if ($boxCounter = $session->get('ettor') == 1 && $session->get('tvåor') == 1 && $session->get('treor') == 1 && $session->get('fyror') == 1 && $session->get('femmor') == 1 && $session->get('sexor') == 1 && $session->get('par') == 1 && $session->get('2par') == 1 && $session->get('tretal') == 1 && $session->get('fyrtal') == 1 && $session->get('Lstege') == 1 && $session->get('Sstege') == 1 && $session->get('kåk') == 1 && $session->get('chans') == 1 && $session->get('yatzy') == 1) {
+        if ($session->get('ettor') == 1 && $session->get('tvåor') == 1 && $session->get('treor') == 1 && $session->get('fyror') == 1 && $session->get('femmor') == 1 && $session->get('sexor') == 1 && $session->get('par') == 1 && $session->get('2par') == 1 && $session->get('tretal') == 1 && $session->get('fyrtal') == 1 && $session->get('Lstege') == 1 && $session->get('Sstege') == 1 && $session->get('kåk') == 1 && $session->get('chans') == 1 && $session->get('yatzy') == 1) {
             $session->set('endgame', false);
             //var_dump('endgame');
         }

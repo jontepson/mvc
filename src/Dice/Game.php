@@ -40,6 +40,7 @@ class Game extends AbstractController
         $dices = $session->get("dices") ?? 0;
 
         if (isset($_POST['roll'])) {
+            $result = array();
             for ($i = 0; $i < $dices; $i++) {
                 $dice = new Dice();
                 $result[$i] = $dice->roll();

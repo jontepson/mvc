@@ -19,6 +19,7 @@ class BookController extends AbstractController
     {
         require_once  "../bin/bootstrap.php";
 
+        
         $bookRepository = $entityManager->getRepository('\App\Book\Book');
         $books = $bookRepository->findAll();
 
