@@ -11,8 +11,7 @@ This MVC project is a place where you can play a simple game to 21 or a yatzy ga
 
 ## Installation
 
-You can download this project from (https://github.com/jontepson/mvc/tree/v7.2.2)
-or from (https://github.com/jontepson/mvc/tree/master)
+You can download this project from (https://github.com/jontepson/mvc/tree/master)
 
 git required
 
